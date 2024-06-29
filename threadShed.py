@@ -145,16 +145,34 @@ print("Thread Shed daily revenue is "+str(round(total_sales))+ " dollars.")
 
 thread_sold_split = []
 
-for thread in thread_sold_split:
+for thread in thread_sold:
   #single color
   if "&" not in thread:
-    print("here")
+    #print("here")
     thread_sold_split.append(thread)
 
   #multiple color
   else:
     aux=[]
     aux.append(thread.split('&'))
-    print(aux)
+    #print(aux)
+    for color in aux:
+        thread_sold_split.append(color)
 
-print(thread_sold_split)
+
+#print(thread_sold_split)
+
+def color_count(color):
+  counter = 0
+  for thread in thread_sold_split:
+    if thread == color:
+      #print(thread)
+      counter = counter + 1
+  return counter
+
+print(color_count('white'))
+
+colors = ['red', 'yellow', 'green', 'white', 'black', 'blue', 'purple']
+
+for element in colors:
+  print("Thread Shed sold {0} threads of {1} thread today".format(color_count(element), element))
