@@ -5,12 +5,18 @@ item_price = 4
 # Your code here
 def buy_items(starting_money,starting_num_items,item_price):
   num_bought = 0
-  while True :
-    if starting_num_items > 0 and num_bought <= starting_money :
-      num_bougth = starting_num_items * item_price
-    else:
-      break
-      
+  total_bought = 0
+  while(True):
+      aux= total_bought + item_price
+      starting_num_items -= 1
+      if (aux <= starting_money and starting_num_items >= 0):
+        total_bought = total_bought + item_price
+        num_bought +=1
+        #print(total_bought)
+        
+      else:
+        break
+        
   return num_bought
 
 total = buy_items(starting_money, starting_num_items, item_price)
