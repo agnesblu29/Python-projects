@@ -20,3 +20,4 @@ def score_word(word):
 
 brownie_points = score_word("BROWNIE")
 print(brownie_points)
+#(B + R + O + W + N + I + E) -> (3 + 1 + 1 + 4 + 4 + 1 + 1) = 15
